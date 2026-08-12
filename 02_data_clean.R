@@ -1,7 +1,7 @@
 # ═══════════════════════════════════════════════════════════
 # Script 02 — Data Cleaning
 # Project: ESG Performance & Firm Financial Outcomes
-# Author: Sam Barati Dastjerdi
+# Author: Saman Barati Dastjerdi
 # Institution: University of Hertfordshire
 # Date: May 2025
 # ═══════════════════════════════════════════════════════════
