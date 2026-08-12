@@ -1,7 +1,7 @@
 # ═══════════════════════════════════════════════════════════
 # Script 01 — Data Import
 # Project: ESG Performance & Firm Financial Outcomes
-# Author: Sam Barati Dastjerdi
+# Author: Saman Barati Dastjerdi
 # Institution: University of Hertfordshire
 # Date: May 2025
 # Source: S&P 500 ESG Risk Ratings (Kaggle / Sustainalytics)
@@ -10,7 +10,7 @@
 library(tidyverse)
 
 # ── Load raw data ────────────────────────────────────────────
-raw_data <- read_csv("data/raw/SP_500_ESG_Risk_Ratings.csv")
+raw_data <- read_csv("data/raw/SP 500 ESG Risk Ratings.csv")
 
 # ── First look ───────────────────────────────────────────────
 cat("================================================================\n")
