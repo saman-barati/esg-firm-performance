@@ -1,8 +1,6 @@
 # ESG Risk Analysis of S&P 500 Companies
 
-**Author:** Saman Barati Dastjerdi
-**Institution:** University of Hertfordshire
-**Date:** May 2025
+**Saman Barati Dastjerdi** · University of Hertfordshire · May 2025
 
 A self-directed empirical project in R examining whether ESG risk is a sector-level phenomenon or a firm-level one.
 
@@ -97,14 +95,7 @@ The two tables in `results/` are the derived output of the analysis — sector-l
 
 1. Clone the repository.
 2. Obtain the Sustainalytics ESG Risk Ratings dataset from Kaggle and place the raw file in `data/raw/`.
-3. Create the output directories:
-
-   ```r
-   dir.create("data/clean", recursive = TRUE, showWarnings = FALSE)
-   dir.create("figures",    recursive = TRUE, showWarnings = FALSE)
-   ```
-
-4. Run the scripts in order:
+3. Run the scripts in order:
 
    ```r
    source("01_data_download.R")
@@ -113,7 +104,7 @@ The two tables in `results/` are the derived output of the analysis — sector-l
    source("04_figures.R")
    ```
 
-Requires R 4.6 or later and the packages listed above.
+Requires R 4.6 or later and the packages listed above. Output directories are created by the scripts.
 
 ---
 
