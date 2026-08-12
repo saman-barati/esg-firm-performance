@@ -1,12 +1,15 @@
 # ═══════════════════════════════════════════════════════════
 # Script 04 — Figures
 # Project: ESG Performance & Firm Financial Outcomes
-# Author: Sam Barati Dastjerdi
+# Author: Saman Barati Dastjerdi
 # Institution: University of Hertfordshire
 # Date: May 2025
 # ═══════════════════════════════════════════════════════════
 
 library(tidyverse)
+
+# ggsave() does not create directories, so make sure it exists
+dir.create("figures", showWarnings = FALSE)
 
 # ── Load clean data ──────────────────────────────────────────
 clean_data <- read_csv("data/clean/esg_clean.csv",
@@ -39,7 +42,7 @@ fig1 <- clean_data |>
   theme(plot.title    = element_text(face = "bold"),
         plot.subtitle = element_text(color = "gray50"))
 
-ggsave("output/figures/fig1_esg_by_sector.png",
+ggsave("figures/fig1_esg_by_sector.png",
        fig1, width = 8, height = 5, dpi = 300)
 cat("✓ Figure 1 saved\n")
 
@@ -59,7 +62,7 @@ fig2 <- clean_data |>
   theme_minimal(base_size = 11) +
   theme(plot.title = element_text(face = "bold"))
 
-ggsave("output/figures/fig2_esg_distribution.png",
+ggsave("figures/fig2_esg_distribution.png",
        fig2, width = 7, height = 5, dpi = 300)
 cat("✓ Figure 2 saved\n")
 
@@ -87,10 +90,10 @@ fig3 <- clean_data |>
   theme(plot.title  = element_text(face = "bold"),
         legend.position = "bottom")
 
-ggsave("output/figures/fig3_pillars_by_sector.png",
+ggsave("figures/fig3_pillars_by_sector.png",
        fig3, width = 9, height = 6, dpi = 300)
 cat("✓ Figure 3 saved\n")
 
 cat("\n================================================================\n")
-cat("✓ All figures saved to output/figures/\n")
+cat("✓ All figures saved to figures/\n")
 cat("================================================================\n")
