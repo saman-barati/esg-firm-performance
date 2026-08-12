@@ -24,9 +24,8 @@ fig1 <- clean_data |>
   group_by(sector) |>
   summarise(mean_esg = mean(esg_total),
             se = sd(esg_total) / sqrt(n())) |>
-  ggplot(aes(x = reorder(sector, mean_esg),
-             y = mean_esg, fill = sector)) +
-  geom_col(width = 0.7, show.legend = FALSE) +
+  ggplot(aes(x = reorder(sector, mean_esg), y = mean_esg)) +
+  geom_col(width = 0.7, fill = "grey35") +
   geom_errorbar(aes(ymin = mean_esg - se,
                     ymax = mean_esg + se),
                 width = 0.25) +
@@ -36,7 +35,7 @@ fig1 <- clean_data |>
     subtitle = "S&P 500 Companies (n = 430) | Source: Sustainalytics",
     x        = NULL,
     y        = "Mean ESG Risk Score",
-    caption  = "Higher score = Higher ESG risk"
+    caption  = "Bars show sector means with standard error. Higher score = higher ESG risk."
   ) +
   theme_minimal(base_size = 11) +
   theme(plot.title    = element_text(face = "bold"),
@@ -50,8 +49,8 @@ cat("✓ Figure 1 saved\n")
 fig2 <- clean_data |>
   count(esg_level) |>
   mutate(esg_level = fct_reorder(esg_level, n)) |>
-  ggplot(aes(x = esg_level, y = n, fill = esg_level)) +
-  geom_col(width = 0.6, show.legend = FALSE) +
+  ggplot(aes(x = esg_level, y = n)) +
+  geom_col(width = 0.6, fill = "grey35") +
   geom_text(aes(label = n), vjust = -0.5, size = 3.5) +
   labs(
     title    = "Figure 2: Distribution of ESG Risk Levels",
@@ -78,6 +77,9 @@ fig3 <- clean_data |>
   ggplot(aes(x = reorder(sector, score),
              y = score, fill = pillar)) +
   geom_col(position = "dodge") +
+  scale_fill_manual(values = c(Environmental = "#0072B2",
+                               Social        = "#E69F00",
+                               Governance    = "#009E73")) +
   coord_flip() +
   labs(
     title    = "Figure 3: ESG Pillars by Sector",
